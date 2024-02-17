@@ -38,7 +38,7 @@ let needle = new Schema(
         },
         date: {
             type: Date,
-            default: Date.toLocaleString("es-CO")
+            default: Date.now.toLocaleString("es-CO")
         },
     },
     {
