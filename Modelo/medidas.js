@@ -3,18 +3,19 @@ const Schema = mongoose.Schema;
 
 let medidas = new Schema(
     {
-        detalle: { type: String, },
-        cetme: { type: String, },
-        plano: { type: String, },
-        cetme1: { type: String, },
-        plano1: { type: String, },
-        cetme2: { type: String, },
-        plano2: { type: String, },
-        cetme3: { type: String, },
-        plano3: { type: String, },
-        id: { type: Schema.ObjectId, ref: "_id" }
 
-        // detalle: { type: String },
+        detalle: [{ type: Object }],
+        cetme: [{ type: Object }],
+        plano: [{ type: Object }],
+        cetme1: [{ type: Object }],
+        plano1: [{ type: Object }],
+        cetme2: [{ type: Object }],
+        plano2: [{ type: Object }],
+        cetme3: [{ type: Object }],
+        plano3: [{ type: Object }],
+        id: { type: Schema.ObjectId, ref: "desarrollo" }
+
+        // detalle: [{ type: Object }],
         // cetme: { type: Number },
         // plano: { type: Number },
         // cetme1: { type: Number },

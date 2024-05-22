@@ -14,15 +14,25 @@ ruta.get('/', (req, res) => {
   });
 });
 
-ruta.get('/medidas', (req, res) => {
-  medidas.find((error, data, next) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.json(data);
-    }
+ruta.get("/medidas", (req, res) => {
+  medidas.find((err, medida) => {
+    desarrollo.populate(medida, { path: "id" }, (err, medida) => {
+      res.status(200).send(medida)
+    });
   });
 });
+
+// ruta.get('/medidas', (req, res) => {
+//   medidas.find((error, data, next) => {
+//     id.populate(id, { path: "id" }, (error, res) => {
+//       if (error) {
+//         return next(error);
+//       } else {
+//         res.json(data);
+//       }
+//     });
+//   })
+// });
 
 
 const bcrypt = require("bcrypt");
