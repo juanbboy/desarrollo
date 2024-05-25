@@ -2,7 +2,6 @@ const express = require("express");
 const ruta = express.Router();
 
 let desarrollo = require("../Modelo/desarrollo");
-let medidas = require("../Modelo/medidas");
 
 ruta.get('/', (req, res) => {
   desarrollo.find((error, data, next) => {
@@ -14,25 +13,15 @@ ruta.get('/', (req, res) => {
   });
 });
 
-ruta.get("/medidas", (req, res) => {
-  medidas.find((err, medida) => {
-    desarrollo.populate(medida, { path: "id" }, (err, medida) => {
-      res.status(200).send(medida)
-    });
-  });
-});
-
-// ruta.get('/medidas', (req, res) => {
-//   medidas.find((error, data, next) => {
-//     id.populate(id, { path: "id" }, (error, res) => {
-//       if (error) {
-//         return next(error);
-//       } else {
-//         res.json(data);
-//       }
+// ruta.get("/medidas", (req, res) => {
+//   medidas.find((err, medida) => {
+//     desarrollo.populate(medida, { path: "id" }, (err, medida) => {
+//       res.status(200).send(medida)
 //     });
-//   })
+//   });
 // });
+
+
 
 
 const bcrypt = require("bcrypt");
@@ -61,31 +50,6 @@ ruta.post('/regdesarrollo', async (req, res, next) => {
   });
 });
 
-
-ruta.post('/regmedidas', async (req, res, next) => {
-
-  const ingreso = new medidas({
-    detalle: req.body.detalle,
-    cetme: req.body.cetme,
-    plano: req.body.plano,
-    cetme1: req.body.cetme1,
-    plano1: req.body.plano1,
-    cetme2: req.body.cetme2,
-    plano2: req.body.plano2,
-    cetme3: req.body.cetme3,
-    plano3: req.body.plano3,
-    id: req.body.id,
-  })
-
-  medidas.create(ingreso, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      console.log(data);
-      res.json(data);
-    }
-  });
-});
 
 ruta.get("/edit-desarrollo/:id", (req, res) => {
   desarrollo.findById(req.params.id, (error, data, next) => {
