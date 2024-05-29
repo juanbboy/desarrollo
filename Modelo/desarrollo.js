@@ -11,6 +11,7 @@ let desarrollo = new Schema(
         fecha_entrega: { type: Date, },
         descripcion: { type: String, },
         estado: { type: String, },
+        talla: { type: String, },
         tit_tabla: [{ type: Object }],
         crudo: [{ type: Object }],
         terminado: [{ type: Object }],
