@@ -7,6 +7,7 @@ let desarrollo = new Schema(
         name: { type: String, },
         publisher: { type: String, },
         maquina: { type: String, },
+        optenido: { type: String, },
         fecha_creacion: { type: Date, },
         fecha_entrega: { type: Date, },
         descripcion: { type: String, },
