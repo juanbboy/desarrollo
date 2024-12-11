@@ -13,17 +13,6 @@ ruta.get('/', (req, res) => {
   });
 });
 
-// ruta.get("/medidas", (req, res) => {
-//   medidas.find((err, medida) => {
-//     desarrollo.populate(medida, { path: "id" }, (err, medida) => {
-//       res.status(200).send(medida)
-//     });
-//   });
-// });
-
-
-
-
 const bcrypt = require("bcrypt");
 
 
