@@ -16,7 +16,9 @@ let desarrollo = new Schema(
         tit_tabla: [{ type: Object }],
         crudo: [{ type: Object }],
         terminado: [{ type: Object }],
-        date: { type: Date }
+        date: { type: Date },
+        img1: { type: String, },
+        img2: { type: String, },
     },
     {
         collection: "Desarrollo",
