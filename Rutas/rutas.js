@@ -38,6 +38,8 @@ ruta.post('/regdesarrollo', async (req, res, next) => {
     fecha_entrega: req.body.fecha_entrega,
     descripcion: req.body.descripcion,
     estado: req.body.estado,
+    img1: req.body.img1,
+    img2: req.body.img2
   })
 
   desarrollo.create(ingreso, (error, data) => {
