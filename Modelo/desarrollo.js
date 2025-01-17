@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { default: Seguimiento } = require("../../src/components/seguimiento/Seguimiento");
 const Schema = mongoose.Schema;
 
 let desarrollo = new Schema(
@@ -16,11 +15,12 @@ let desarrollo = new Schema(
         talla: { type: String, },
         tit_tabla: [{ type: Object }],
         crudo: [{ type: Object }],
+        seguimiento: [{ type: Object }],
         terminado: [{ type: Object }],
         date: { type: Date },
         img1: { type: String, },
         img2: { type: String, },
-        seguimiento: [{ type: Object }]
+
     },
     {
         collection: "Desarrollo",
