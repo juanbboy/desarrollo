@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-let desarrollo = new Schema(
+let maestro = new Schema(
     {
         COD: { type: Number, },
         NOM: { type: String, },
@@ -11,4 +11,4 @@ let desarrollo = new Schema(
     }
 );
 
-module.exports = mongoose.model("desarrollo", desarrollo);
+module.exports = mongoose.model("maestro", maestro);
