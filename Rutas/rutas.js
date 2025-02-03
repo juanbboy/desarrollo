@@ -13,6 +13,16 @@ ruta.get('/', (req, res) => {
   });
 });
 
+ruta.get('/maestro', (req, res) => {
+  maestro.find((error, data, next) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 const bcrypt = require("bcrypt");
 
 
