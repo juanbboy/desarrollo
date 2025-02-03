@@ -2,6 +2,7 @@ const express = require("express");
 const ruta = express.Router();
 
 let desarrollo = require("../Modelo/desarrollo");
+let maestro = require("../Modelo/maestro");
 
 ruta.get('/', (req, res) => {
   desarrollo.find((error, data, next) => {
@@ -12,6 +13,7 @@ ruta.get('/', (req, res) => {
     }
   });
 });
+
 
 ruta.get('/maestro', (req, res) => {
   maestro.find((error, data, next) => {
