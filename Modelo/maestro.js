@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let maestro = new Schema(
     {
-        COD: { type: Number, },
+        COD: { type: String, },
         NOM: { type: String, },
     },
     {
